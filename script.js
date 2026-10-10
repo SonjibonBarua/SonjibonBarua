@@ -27,44 +27,7 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Hero portrait: use the local SVG asset with a version query to avoid stale browser/CDN cache. */
-const heroVisual = document.querySelector(".hero-visual");
-if (heroVisual) {
-  const portrait = heroVisual.querySelector(".profile-portrait");
-  const portraitUrl = "assets/profile.svg?v=20261010-2";
-
-  if (portrait) {
-    portrait.style.opacity = "0";
-    portrait.style.transition = "opacity .25s ease";
-    portrait.src = portraitUrl;
-    portrait.loading = "eager";
-    portrait.fetchPriority = "high";
-    portrait.decoding = "async";
-    portrait.onload = () => { portrait.style.opacity = "1"; };
-    portrait.onerror = () => {
-      portrait.style.opacity = "0";
-      portrait.style.display = "none";
-      heroVisual.classList.add("portrait-failed");
-    };
-  } else {
-    const newPortrait = document.createElement("img");
-    newPortrait.className = "profile-portrait";
-    newPortrait.src = portraitUrl;
-    newPortrait.alt = "Sonjibon Barua — Digital Marketing & Admissions Manager, Creative Designer and Brand Strategist";
-    newPortrait.width = 352;
-    newPortrait.height = 470;
-    newPortrait.loading = "eager";
-    newPortrait.fetchPriority = "high";
-    newPortrait.decoding = "async";
-    heroVisual.prepend(newPortrait);
-  }
-
-  const portraitPreload = document.querySelector('link[rel="preload"][as="image"]');
-  if (portraitPreload) {
-    portraitPreload.href = portraitUrl;
-    portraitPreload.type = "image/svg+xml";
-  }
-}
+/* The hero portrait is loaded directly by index.html. Do not replace its src here. */
 
 const contactActions = document.querySelector(".contact-actions");
 if (contactActions && !document.querySelector(".contact-details")) {
