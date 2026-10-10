@@ -27,7 +27,19 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* The hero portrait is loaded directly by index.html. Do not replace its src here. */
+/* Force the hero portrait to the self-contained SVG asset. */
+const portrait = document.querySelector(".profile-portrait");
+if (portrait) {
+  portrait.src = "assets/profile.svg?v=20261010-portrait-final";
+  portrait.removeAttribute("srcset");
+  portrait.style.display = "block";
+  portrait.style.visibility = "visible";
+  portrait.onerror = () => {
+    portrait.style.display = "none";
+    const visual = portrait.closest(".hero-visual");
+    if (visual) visual.classList.add("portrait-load-failed");
+  };
+}
 
 const contactActions = document.querySelector(".contact-actions");
 if (contactActions && !document.querySelector(".contact-details")) {
