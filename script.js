@@ -27,18 +27,27 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Force the hero portrait to the self-contained SVG asset. */
+/* Robust portrait loading: local SVG -> GitHub raw SVG -> GitHub raw WebP. */
 const portrait = document.querySelector(".profile-portrait");
 if (portrait) {
-  portrait.src = "assets/profile.svg?v=20261010-portrait-final";
-  portrait.removeAttribute("srcset");
-  portrait.style.display = "block";
-  portrait.style.visibility = "visible";
-  portrait.onerror = () => {
-    portrait.style.display = "none";
-    const visual = portrait.closest(".hero-visual");
-    if (visual) visual.classList.add("portrait-load-failed");
+  const portraitSources = [
+    "assets/profile.svg?v=20261010-portrait-final",
+    "https://raw.githubusercontent.com/SonjibonBarua/SonjibonBarua/main/assets/profile.svg",
+    "https://raw.githubusercontent.com/SonjibonBarua/SonjibonBarua/main/assets/profile.webp"
+  ];
+  let portraitIndex = 0;
+  const loadNextPortrait = () => {
+    if (portraitIndex >= portraitSources.length) {
+      portrait.style.display = "none";
+      return;
+    }
+    const source = portraitSources[portraitIndex++];
+    portrait.onerror = loadNextPortrait;
+    portrait.src = source;
+    portrait.style.display = "block";
+    portrait.style.visibility = "visible";
   };
+  loadNextPortrait();
 }
 
 const contactActions = document.querySelector(".contact-actions");
