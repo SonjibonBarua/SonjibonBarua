@@ -1,3 +1,8 @@
+const themeSheet = document.createElement("link");
+themeSheet.rel = "stylesheet";
+themeSheet.href = "theme.css";
+document.head.appendChild(themeSheet);
+
 const typographySheet = document.createElement("link");
 typographySheet.rel = "stylesheet";
 typographySheet.href = "typography.css";
