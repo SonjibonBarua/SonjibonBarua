@@ -27,11 +27,11 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Hero portrait: use the local SVG asset so the photo does not depend on a CDN or branch cache. */
+/* Hero portrait: use the local SVG asset with a version query to avoid stale browser/CDN cache. */
 const heroVisual = document.querySelector(".hero-visual");
 if (heroVisual) {
   const portrait = heroVisual.querySelector(".profile-portrait");
-  const portraitUrl = "assets/profile.svg";
+  const portraitUrl = "assets/profile.svg?v=20261010-2";
 
   if (portrait) {
     portrait.style.opacity = "0";
