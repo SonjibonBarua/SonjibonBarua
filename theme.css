@@ -1,0 +1,78 @@
+:root{
+  --bg:#0b1220;
+  --panel:#121c2b;
+  --ink:#f5f1e8;
+  --muted:#aeb8c5;
+  --line:#2a384b;
+  --accent:#c9a86a;
+  --accent-soft:#e2c995;
+  --coral:#d88972;
+  --paper:#f3efe7;
+  --dark-ink:#18202b;
+}
+
+body{background:var(--bg);color:var(--ink)}
+::selection{color:#0b1220;background:var(--accent-soft)}
+.site-header{background:rgba(11,18,32,.92);border-bottom-color:rgba(226,201,149,.16)}
+.brand-mark{background:var(--accent);color:#101721}
+.brand-label{color:#cbd2dc}
+.nav-links a{color:#cbd2dc}
+.nav-links a:hover,.nav-cta span,.text-link span,.company,.cap-num,.impact-icon,.metric-placeholders b,.project-link span{color:var(--accent-soft)}
+.nav-links .nav-cta{border-color:#566579}
+.status-dot{background:var(--accent);box-shadow:0 0 15px rgba(201,168,106,.38)}
+h1 em,h2 em,.statement span,.contact-inner h2 em{color:var(--accent-soft)}
+.hero-visual:before{background:radial-gradient(ellipse,rgba(201,168,106,.16),transparent 62%)}
+.orbit-one{border-color:rgba(201,168,106,.46)}
+.visual-core{background:linear-gradient(135deg,#e2c995,#b78e50);color:#151b24;box-shadow:0 20px 90px rgba(201,168,106,.12)}
+.tag-spark{color:var(--coral)}
+.tag-bottom span{color:var(--accent-soft)}
+.button-primary{background:var(--accent);color:#101721}
+.button-primary:hover{background:var(--accent-soft)}
+.intro-band{background:var(--paper);color:var(--dark-ink)}
+.intro-grid .section-kicker{color:#5d625f}
+.statement span{color:#8a6b39}
+.experience-section,.impact-section{background:#101a29}
+.project-card{background:#121c2b;border-color:#2b3a4d}
+.art-process{background:linear-gradient(135deg,#d9c18d,#b58a4e);color:#151b24}
+.art-typography em{color:var(--coral)}
+.toolkit-section{background:var(--paper);color:var(--dark-ink)}
+.toolkit-title h2 em{color:#8a6b39}
+.button-outline:hover{background:#182538}
+.contact-footer{border-top-color:#2b3a4d}
+.proof-page,.section{background:transparent}
+.metric,.card,.bench,.funnel-item,.gallery-card{background:#111b29;border-color:#2a3a4e}
+.insight,.source-note{background:#152235;border-left-color:var(--accent)}
+.up{color:var(--accent-soft)}
+.actions a:hover{background:#1b2a3d}
+.case-study-fab{background:var(--accent)!important;color:#101721!important;border-color:#101721!important}
+.growth-proof-fab{background:#111b29!important;color:var(--accent-soft)!important;border-color:var(--accent)!important}
+
+/* Premium typography */
+body{font-size:16px;line-height:1.75}
+p{font-size:1rem;line-height:1.8}
+.hero-lede{font-size:17px;line-height:1.85;color:#c1cad5}
+.eyebrow,.section-kicker,.mono,.art-label,.art-foot,.project-type,.impact-label,.hero-bottomline,.timeline-date{font-size:11px}
+.brand-label{font-size:13px}
+.nav-links{font-size:13px}
+.about-copy{font-size:15px;line-height:1.9}
+.about-copy .large-copy{font-size:23px}
+.capability h3{font-size:18px}
+.capability p{font-size:13px;line-height:1.7}
+.timeline-top h3{font-size:21px}
+.timeline-description{font-size:14px;line-height:1.85}
+.tag-row span{font-size:11px;padding:6px 10px}
+.work-intro,.project-description{font-size:14px;line-height:1.85}
+.project-meta h3{font-size:19px}
+.evidence-note,.small-note,.footer-note{font-size:11px;line-height:1.8}
+.impact-heading>p:last-child,.impact-row p{font-size:14px;line-height:1.85}
+.impact-row h3{font-size:18px}
+.tool-group p{font-size:14px;line-height:1.8}
+.contact-inner>p:not(.section-kicker){font-size:15px;line-height:1.85}
+
+@media(max-width:700px){
+  .section-wrap{width:min(100% - 38px,1180px)}
+  .hero-lede{font-size:16px}
+  .about-copy{font-size:14px}
+  .timeline-description,.work-intro,.project-description,.impact-row p{font-size:13.5px}
+  .site-header{padding-inline:19px}
+}
