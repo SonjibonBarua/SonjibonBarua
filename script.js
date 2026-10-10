@@ -16,6 +16,15 @@ navLinks?.querySelectorAll("a").forEach((link) => {
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
+// Add a prominent case-study entry point without changing the core navigation markup.
+if (document.body && !document.querySelector(".case-study-fab")) {
+  const fab = document.createElement("a");
+  fab.className = "case-study-fab";
+  fab.href = "case-studies.html";
+  fab.innerHTML = "Case studies <span>↗</span>";
+  document.body.appendChild(fab);
+}
+
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
