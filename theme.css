@@ -76,3 +76,7 @@ p{font-size:1rem;line-height:1.8}
   .timeline-description,.work-intro,.project-description,.impact-row p{font-size:13.5px}
   .site-header{padding-inline:19px}
 }
+
+/* Portrait hardening: use the self-contained SVG asset and remove the old WebP dependency. */
+.hero-visual{background-image:none!important}
+.profile-portrait{content:url('./assets/profile.svg?v=20261010-4')!important}
