@@ -1,0 +1,188 @@
+:root{
+  --font-display:"Manrope",sans-serif;
+  --type-body:16px;
+  --type-copy:15px;
+  --type-small:12px;
+}
+
+/* Premium typography layer: larger, clearer, more welcoming */
+body{
+  font-family:var(--font-display);
+  font-size:var(--type-body);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+p,li{font-size:var(--type-copy);line-height:1.8}
+strong,b{font-weight:800;color:inherit}
+
+.site-header{height:82px}
+.brand-label{font-size:13px;font-weight:700;letter-spacing:.045em}
+.nav-links{gap:32px;font-size:13px}
+.nav-links a{font-weight:700}
+.nav-links .nav-cta{padding:11px 16px}
+
+.eyebrow,.section-kicker,.mono,.art-label,.art-foot,.project-type,.impact-label,.hero-bottomline,.timeline-date{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.095em;
+}
+
+.eyebrow{margin-bottom:28px}
+h1{
+  font-size:clamp(56px,7vw,96px);
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-.065em;
+  margin-bottom:28px;
+}
+.hero-lede{font-size:18px;line-height:1.8;max-width:610px;color:#c5c7c2}
+.hero-actions{margin-top:36px}
+.button,.text-link{font-size:13px}
+.button{padding:15px 18px}
+.hero-note{font-size:12px;margin-top:58px}
+.hero-note .mono{font-size:10px}
+
+.statement{
+  font-size:clamp(29px,3.6vw,48px);
+  line-height:1.32;
+  font-weight:700;
+}
+.intro-sub{font-size:15px;line-height:1.85}
+
+.section-heading h2,.work-header h2,.impact-heading h2,.toolkit-title h2,.contact-inner h2{
+  font-size:clamp(44px,5.3vw,70px);
+  line-height:1.05;
+  font-weight:800;
+}
+.about-copy{font-size:15px;line-height:1.9}
+.about-copy p{font-size:15px}
+.about-copy .large-copy{font-size:23px;font-weight:700;line-height:1.55}
+.capability{padding:25px 0}
+.capability h3{font-size:18px;font-weight:800}
+.capability p{font-size:13px;line-height:1.7}
+
+.timeline-item{padding:39px 0 42px}
+.timeline-top h3{font-size:21px;font-weight:800}
+.company{font-size:13px;font-weight:700}
+.timeline-description{font-size:14px;line-height:1.85}
+.tag-row span{font-size:10px;padding:6px 10px}
+.small-note{font-size:12px;line-height:1.75}
+
+.work-intro{font-size:14px;line-height:1.85}
+.project-meta h3{font-size:19px;font-weight:800}
+.project-description{font-size:13px;line-height:1.85}
+.project-link{font-size:13px}
+.evidence-note,.work-disclaimer{font-size:11px;line-height:1.8}
+.art-typography{font-weight:800}
+
+.impact-heading>p:last-child{font-size:14px;line-height:1.85}
+.impact-row{padding:25px 0}
+.impact-row h3{font-size:17px;font-weight:800}
+.impact-row p{font-size:13px;line-height:1.8}
+.metrics-panel h3{font-size:21px;font-weight:800}
+.metrics-panel p:not(.section-kicker){font-size:12px;line-height:1.8}
+.metric-placeholders span{font-size:12px}
+
+.toolkit-title h2{margin-top:22px}
+.tool-group{padding:22px 0}
+.tool-group .mono{font-size:10px}
+.tool-group p{font-size:15px;line-height:1.8;font-weight:700}
+
+.contact-inner>p:not(.section-kicker){font-size:15px;line-height:1.85}
+.contact-inner h2{font-size:clamp(50px,6.5vw,82px)}
+.contact-footer{font-size:9px}
+
+/* Case studies and growth proof */
+.case-hero h1,.proof-hero h1{font-weight:800}
+.case-hero p,.proof-hero p{font-size:15px;line-height:1.85}
+.case-side h2{font-size:clamp(44px,4.5vw,62px);font-weight:800}
+.case-side p{font-size:13px;line-height:1.85}
+.case-block{padding:31px 0}
+.case-block h3{font-size:19px;font-weight:800;margin-bottom:10px}
+.case-block p,.case-list{font-size:14px;line-height:1.85}
+.case-list li{font-size:14px;margin-bottom:6px}
+.evidence{padding:25px}
+.evidence strong{font-size:12px;font-weight:800}
+.evidence p{font-size:12px;line-height:1.8}
+.metric b{font-size:16px;font-weight:800}
+.value-grid h2{font-size:clamp(44px,4.5vw,62px);font-weight:800}
+.value-item h3{font-size:16px;font-weight:800}
+.value-item p{font-size:13px;line-height:1.8}
+.proof-head h2{font-size:clamp(50px,5vw,68px);font-weight:800}
+.proof-head p{font-size:13px;line-height:1.85}
+.proof-card h3{font-size:21px;font-weight:800}
+.proof-card p{font-size:12px;line-height:1.8}
+.proof-step b{font-size:12px;font-weight:800}
+.proof-step span{font-size:10px;line-height:1.7}
+.snapshot-title h3{font-size:18px;font-weight:800}
+.snapshot-table{font-size:11px}
+.snapshot-table th{font-size:8px;font-weight:700}
+.snapshot-table td{font-size:12px;line-height:1.6}
+.verification-note{font-size:11px!important;line-height:1.75!important}
+.proof-cta b{font-size:12px;font-weight:800}
+.proof-cta p{font-size:12px;line-height:1.8}
+
+/* BIT growth proof page */
+.proof-page{padding:110px 0}
+.proof-hero h1{font-size:clamp(56px,7.5vw,94px);line-height:1.02}
+.proof-hero p{font-size:15px;line-height:1.85}
+.source-note{font-size:12px;line-height:1.8;padding:17px 19px}
+.section{padding:88px 0}
+.section h2{font-size:clamp(42px,4.8vw,64px);line-height:1.05;font-weight:800}
+.section-intro{font-size:14px;line-height:1.85}
+.metric{padding:23px}
+.metric .label{font-size:9px;font-weight:700}
+.metric .num{font-size:34px;line-height:1.15}
+.metric .change{font-size:11px}
+.card{padding:27px}
+.card h3{font-size:18px;font-weight:800}
+.card p{font-size:12px;line-height:1.75}
+.insight{font-size:12px;line-height:1.8;padding:18px}
+.funnel-item{padding:23px}
+.funnel-item .step{font-size:9px;font-weight:700}
+.funnel-item strong{font-size:29px;font-weight:800}
+.funnel-item span{font-size:11px;line-height:1.65}
+.gallery-card{padding:23px}
+.gallery-card h3{font-size:19px;font-weight:800}
+.gallery-card p{font-size:11px;line-height:1.75}
+.bench{padding:25px}
+.bench b{font-size:31px;font-weight:800}
+.bench span{font-size:11px;line-height:1.6}
+.footer-note{font-size:11px;line-height:1.8}
+.actions a{font-size:12px;padding:13px 16px}
+
+@media(max-width:800px){
+  :root{--type-body:15px;--type-copy:14px}
+  .section-wrap{width:min(1180px,calc(100% - 40px))}
+  .hero{padding-top:58px;padding-bottom:72px}
+  .hero-lede{font-size:16px}
+  .section-heading,.work-header{gap:28px}
+  .section-heading h2,.work-header h2,.impact-heading h2,.toolkit-title h2{font-size:clamp(40px,8vw,56px)}
+  .project-description{font-size:13px}
+  .case-side h2{font-size:42px}
+  .proof-head h2{font-size:44px}
+}
+
+@media(max-width:520px){
+  .site-header{height:72px;padding:0 20px}
+  .brand-label{font-size:11px}
+  h1{font-size:clamp(46px,13vw,64px)}
+  .hero-lede{font-size:15px;line-height:1.75}
+  .statement{font-size:28px}
+  .about-section,.work-section{padding-top:85px;padding-bottom:88px}
+  .experience-section{padding:82px 0 90px}
+  .impact-section{padding:88px 0}
+  .toolkit-section{padding:78px 0}
+  .contact-section{padding-top:88px}
+  .contact-inner h2{font-size:46px}
+  .timeline-item{grid-template-columns:1fr;gap:13px}
+  .timeline-top h3{font-size:19px}
+  .case-hero,.proof-page{padding:70px 0}
+  .case-block p,.case-list{font-size:14px}
+  .section{padding:68px 0}
+  .section h2{font-size:38px}
+  .metric-grid{gap:12px}
+  .metric .num{font-size:31px}
+}
