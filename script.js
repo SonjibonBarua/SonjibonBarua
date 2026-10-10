@@ -27,12 +27,11 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Hero portrait: use the committed SVG asset through jsDelivr CDN.
-   The SVG contains the optimized WebP, so the browser receives one small image asset. */
+/* Hero portrait: use the local SVG asset so the photo does not depend on a CDN or branch cache. */
 const heroVisual = document.querySelector(".hero-visual");
 if (heroVisual) {
   const portrait = heroVisual.querySelector(".profile-portrait");
-  const portraitUrl = "https://cdn.jsdelivr.net/gh/SonjibonBarua/SonjibonBarua@d9caa217b601e2cffb862a04475306a316d311c9/assets/profile.svg";
+  const portraitUrl = "assets/profile.svg";
 
   if (portrait) {
     portrait.style.opacity = "0";
@@ -52,7 +51,7 @@ if (heroVisual) {
     newPortrait.className = "profile-portrait";
     newPortrait.src = portraitUrl;
     newPortrait.alt = "Sonjibon Barua — Digital Marketing & Admissions Manager, Creative Designer and Brand Strategist";
-    newPortrait.width = 360;
+    newPortrait.width = 352;
     newPortrait.height = 470;
     newPortrait.loading = "eager";
     newPortrait.fetchPriority = "high";
