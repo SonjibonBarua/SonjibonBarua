@@ -8,6 +8,11 @@ typographySheet.rel = "stylesheet";
 typographySheet.href = "typography.css";
 document.head.appendChild(typographySheet);
 
+const personalSheet = document.createElement("link");
+personalSheet.rel = "stylesheet";
+personalSheet.href = "personal.css";
+document.head.appendChild(personalSheet);
+
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 menuButton?.addEventListener("click", () => {
