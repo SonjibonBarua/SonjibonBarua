@@ -27,23 +27,44 @@ navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click",
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Hero portrait: use the verified repository asset through GitHub's raw CDN. */
+/* Hero portrait: use the committed SVG asset through jsDelivr CDN.
+   The SVG contains the optimized WebP, so the browser receives one small image asset. */
 const heroVisual = document.querySelector(".hero-visual");
-if (heroVisual && !heroVisual.querySelector(".profile-portrait")) {
-  const portrait = document.createElement("img");
-  portrait.className = "profile-portrait";
-  portrait.src = "https://raw.githubusercontent.com/SonjibonBarua/SonjibonBarua/main/assets/profile.webp?v=20261010";
-  portrait.alt = "Sonjibon Barua — Digital Marketing & Admissions Manager, Creative Designer and Brand Strategist";
-  portrait.width = 360;
-  portrait.height = 470;
-  portrait.loading = "eager";
-  portrait.fetchPriority = "high";
-  portrait.decoding = "async";
-  portrait.onerror = () => {
-    portrait.style.display = "none";
-    heroVisual.classList.add("portrait-failed");
-  };
-  heroVisual.prepend(portrait);
+if (heroVisual) {
+  const portrait = heroVisual.querySelector(".profile-portrait");
+  const portraitUrl = "https://cdn.jsdelivr.net/gh/SonjibonBarua/SonjibonBarua@d9caa217b601e2cffb862a04475306a316d311c9/assets/profile.svg";
+
+  if (portrait) {
+    portrait.style.opacity = "0";
+    portrait.style.transition = "opacity .25s ease";
+    portrait.src = portraitUrl;
+    portrait.loading = "eager";
+    portrait.fetchPriority = "high";
+    portrait.decoding = "async";
+    portrait.onload = () => { portrait.style.opacity = "1"; };
+    portrait.onerror = () => {
+      portrait.style.opacity = "0";
+      portrait.style.display = "none";
+      heroVisual.classList.add("portrait-failed");
+    };
+  } else {
+    const newPortrait = document.createElement("img");
+    newPortrait.className = "profile-portrait";
+    newPortrait.src = portraitUrl;
+    newPortrait.alt = "Sonjibon Barua — Digital Marketing & Admissions Manager, Creative Designer and Brand Strategist";
+    newPortrait.width = 360;
+    newPortrait.height = 470;
+    newPortrait.loading = "eager";
+    newPortrait.fetchPriority = "high";
+    newPortrait.decoding = "async";
+    heroVisual.prepend(newPortrait);
+  }
+
+  const portraitPreload = document.querySelector('link[rel="preload"][as="image"]');
+  if (portraitPreload) {
+    portraitPreload.href = portraitUrl;
+    portraitPreload.type = "image/svg+xml";
+  }
 }
 
 const contactActions = document.querySelector(".contact-actions");
