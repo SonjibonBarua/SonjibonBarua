@@ -32,7 +32,7 @@ const heroVisual = document.querySelector(".hero-visual");
 if (heroVisual && !heroVisual.querySelector(".profile-portrait")) {
   const portrait = document.createElement("img");
   portrait.className = "profile-portrait";
-  portrait.src = "assets/profile.svg";
+  portrait.src = "assets/profile.webp?v=1";
   portrait.alt = "Sonjibon Barua — Digital Marketing & Admissions Manager, Creative Designer and Brand Strategist";
   portrait.loading = "eager";
   portrait.decoding = "async";
