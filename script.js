@@ -1,3 +1,8 @@
+const typographySheet = document.createElement("link");
+typographySheet.rel = "stylesheet";
+typographySheet.href = "typography.css";
+document.head.appendChild(typographySheet);
+
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
